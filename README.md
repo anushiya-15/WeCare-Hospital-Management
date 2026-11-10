@@ -1,6 +1,5 @@
 # WeCARE - Healthcare Management System
 
-## About the Project
 
 WeCARE is a healthcare management project developed using Java and Spring Boot. The main purpose of this project is to make healthcare-related activities easier to manage.
 
