@@ -1,0 +1,415 @@
+{
+  "info": {
+    "name": "WeCARE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "ap",
+      "value": "AP100001"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. All coaches",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/coaches",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "coaches"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. Add coach",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/coaches",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "coaches"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Dr. Ravi Shankar\",\n  \"dateOfBirth\": \"1984-06-15\",\n  \"gender\": \"Male\",\n  \"mobile\": \"9811100099\",\n  \"specialization\": \"Sleep & Stress\"\n}"
+        }
+      }
+    },
+    {
+      "name": "3. Add coach - INVALID mobile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/coaches",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "coaches"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Dr. Ravi Shankar\",\n  \"dateOfBirth\": \"1984-06-15\",\n  \"gender\": \"Male\",\n  \"mobile\": \"12345\",\n  \"specialization\": \"Sleep & Stress\"\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Update coach",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/coaches/C1001",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "coaches",
+            "C1001"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Dr. Meera Nair\",\n  \"dateOfBirth\": \"1984-06-15\",\n  \"gender\": \"Male\",\n  \"mobile\": \"9811100001\",\n  \"specialization\": \"Sleep & Stress\"\n}"
+        }
+      }
+    },
+    {
+      "name": "5. All users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/users",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Register user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/users",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Deepa Raman\",\n  \"dateOfBirth\": \"1990-08-21\",\n  \"gender\": \"Female\",\n  \"mobile\": \"9822200099\",\n  \"email\": \"deepa@mail.com\",\n  \"pincode\": \"600042\",\n  \"city\": \"Chennai\",\n  \"state\": \"Tamil Nadu\",\n  \"country\": \"India\"\n}"
+        }
+      }
+    },
+    {
+      "name": "7. Register user - INVALID pincode",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/users",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Deepa Raman\",\n  \"dateOfBirth\": \"1990-08-21\",\n  \"gender\": \"Female\",\n  \"mobile\": \"9822200099\",\n  \"email\": \"deepa@mail.com\",\n  \"pincode\": \"60\",\n  \"city\": \"Chennai\",\n  \"state\": \"Tamil Nadu\",\n  \"country\": \"India\"\n}"
+        }
+      }
+    },
+    {
+      "name": "8. Slot availability",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/coaches/C1001/slots?date=2026-10-13",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "coaches",
+            "C1001",
+            "slots"
+          ]
+        }
+      }
+    },
+    {
+      "name": "9. Book appointment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/appointments",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userCode\": \"U1003\",\n  \"coachCode\": \"C1001\",\n  \"appointmentDate\": \"2026-10-13\",\n  \"slot\": \"S14\",\n  \"reason\": \"Diet advice\"\n}"
+        }
+      }
+    },
+    {
+      "name": "10. Book - same slot (conflict demo)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/appointments",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userCode\": \"U1004\",\n  \"coachCode\": \"C1001\",\n  \"appointmentDate\": \"2026-10-13\",\n  \"slot\": \"S14\",\n  \"reason\": \"Clash\"\n}"
+        }
+      }
+    },
+    {
+      "name": "11. All appointments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/appointments",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "12. Filter appointments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/appointments?status=BOOKED&coachCode=C1001",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "13. Appointment by code",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/appointments/{{ap}}",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments",
+            "{{ap}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "14. Reschedule",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/appointments/{{ap}}/reschedule",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments",
+            "{{ap}}",
+            "reschedule"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"appointmentDate\": \"2026-10-13\",\n  \"slot\": \"S16\"\n}"
+        }
+      }
+    },
+    {
+      "name": "15. Complete (on/after the day)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/api/appointments/{{ap}}/complete",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments",
+            "{{ap}}",
+            "complete"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"notes\": \"Plan shared. Follow up in 2 weeks.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "16. Cancel",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/appointments/{{ap}}/cancel",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "appointments",
+            "{{ap}}",
+            "cancel"
+          ]
+        }
+      }
+    },
+    {
+      "name": "17. Slot list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/slots",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "slots"
+          ]
+        }
+      }
+    },
+    {
+      "name": "18. Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base}}/api/stats",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "stats"
+          ]
+        }
+      }
+    }
+  ]
+}

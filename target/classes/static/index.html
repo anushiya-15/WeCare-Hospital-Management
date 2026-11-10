@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WeCARE - Wellness Appointments</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="logo"><span class="cross">+</span><div><b>We<em>CARE</em></b><small>Wellness &amp; Coaching</small></div></div>
+    <nav id="nav">
+      <a href="#dashboard" data-v="dashboard"><i>&#9632;</i>Overview</a>
+      <a href="#book" data-v="book"><i>&#10010;</i>Book Appointment</a>
+      <a href="#appointments" data-v="appointments"><i>&#9776;</i>Appointments</a>
+      <a href="#coaches" data-v="coaches"><i>&#9829;</i>Coaches</a>
+      <a href="#members" data-v="members"><i>&#9786;</i>Members</a>
+    </nav>
+    <div class="sidefoot">Spring REST<br>Health Care Domain Capstone</div>
+  </aside>
+  <section class="content">
+    <header class="bar"><div><h1 id="pageTitle">Overview</h1><p id="pageSub"></p></div><div class="today" id="todayChip"></div></header>
+    <div id="view"></div>
+  </section>
+</div>
+
+<div id="overlay" class="overlay"></div>
+<aside id="drawer" class="drawer"><div class="dhead"><h3 id="dTitle"></h3><button id="dClose" aria-label="Close">&times;</button></div><div id="dBody" class="dbody"></div></aside>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
